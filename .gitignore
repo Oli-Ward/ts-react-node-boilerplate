@@ -1,0 +1,71 @@
+# ----------------------------
+# Node.js / Dependencies
+# ----------------------------
+# Ignore all node_modules folders (root + workspace)
+node_modules/
+**/node_modules/
+
+# ----------------------------
+# Environment / Secrets
+# ----------------------------
+# Local environment variables (never commit!)
+.env
+.env.local
+**/.env
+
+# ----------------------------
+# Build outputs
+# ----------------------------
+# Compiled backend (TS → JS) or frontend builds
+dist/
+build/
+**/dist/
+**/build/
+
+# TypeScript incremental compilation files
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Vite build cache
+.vite
+.vite/
+
+# ----------------------------
+# Databases / Storage
+# ----------------------------
+# Local SQLite or database files
+*.db
+*.sqlite
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ----------------------------
+# Operating system files
+# ----------------------------
+.DS_Store   # macOS
+Thumbs.db   # Windows
+
+# ----------------------------
+# IDE / Editor configs
+# ----------------------------
+.vscode/
+.idea/
+
+# ----------------------------
+# Lockfiles
+# ----------------------------
+# We’re using pnpm; ignore npm lockfiles to avoid conflicts
+package-lock.json
+**/package-lock.json
+
+# ----------------------------
+# Optional / Extras
+# ----------------------------
+# Uncomment if you use coverage or temporary test outputs
+# coverage/
+# temp/
