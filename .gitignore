@@ -1,14 +1,14 @@
 # ----------------------------
 # Node.js / Dependencies
 # ----------------------------
-# Ignore all node_modules folders (root + workspace)
+# Ignore all node_modules folders 
 node_modules/
 **/node_modules/
 
 # ----------------------------
 # Environment / Secrets
 # ----------------------------
-# Local environment variables (never commit!)
+# Local environment variables
 .env
 .env.local
 **/.env
@@ -16,7 +16,6 @@ node_modules/
 # ----------------------------
 # Build outputs
 # ----------------------------
-# Compiled backend (TS → JS) or frontend builds
 dist/
 build/
 **/dist/
@@ -60,13 +59,13 @@ Thumbs.db   # Windows
 # ----------------------------
 # Lockfiles
 # ----------------------------
-# We’re using pnpm; ignore npm lockfiles to avoid conflicts
+# Using pnpm; ignore npm lockfiles to avoid conflicts
 package-lock.json
 **/package-lock.json
 
 # ----------------------------
 # Optional / Extras
 # ----------------------------
-# Uncomment if you use coverage or temporary test outputs
+# Uncomment if using coverage or temporary test outputs
 # coverage/
 # temp/
