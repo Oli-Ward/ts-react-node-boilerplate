@@ -48,6 +48,7 @@ pnpm-debug.log*
 # Operating system files
 # ----------------------------
 .DS_Store   # macOS
+**/.DS_Store
 Thumbs.db   # Windows
 
 # ----------------------------
