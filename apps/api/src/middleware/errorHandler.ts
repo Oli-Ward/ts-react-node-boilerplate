@@ -1,11 +1,28 @@
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express"
 
-export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack);
-    const status = (err as any).status ?? 500;
-    res.status(status).json({ error: (err as any).message ?? "Internal Server Error" });
-};
+import logger from "../config/logger"
 
-export const notFoundHandler = (req: Request, res: Response, next: NextFunction) => {
-    res.status(404).json({ error: "Not Found" });
-};
+interface HttpError extends Error {
+    status?: number
+}
+
+export const errorHandler = (
+    err: Error,
+    _req: Request,
+    res: Response,
+    _next: NextFunction
+) => {
+    logger.error(err.stack)
+    const status = (err as HttpError).status ?? 500
+    res.status(status).json({
+        error: (err as HttpError).message ?? "Internal Server Error",
+    })
+}
+
+export const notFoundHandler = (
+    _req: Request,
+    res: Response,
+    _next: NextFunction
+) => {
+    res.status(404).json({ error: "Not Found" })
+}

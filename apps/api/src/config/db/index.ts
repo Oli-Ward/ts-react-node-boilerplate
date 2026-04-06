@@ -1,14 +1,14 @@
-import Database from "better-sqlite3";
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import * as schema from './schema';
-import logger from "../logger";
+import Database from "better-sqlite3"
+import { drizzle } from "drizzle-orm/better-sqlite3"
 
-const sqlite: Database.Database = new Database("db.sqlite");
+import logger from "../logger"
+import * as schema from "./schema"
 
-export const db = drizzle(sqlite, { schema });
+const sqlite: Database.Database = new Database("db.sqlite")
 
-logger.info("🔌 Database connected successfully");
+export const db = drizzle(sqlite, { schema })
+
+logger.info("🔌 Database connected successfully")
 export const closeDb = () => {
-    sqlite.close();
-};
-
+    sqlite.close()
+}
