@@ -5,6 +5,8 @@ import reactRefresh from "eslint-plugin-react-refresh"
 import tseslint from "typescript-eslint"
 import { defineConfig, globalIgnores } from "eslint/config"
 import noRelativeImportPaths from "eslint-plugin-no-relative-import-paths"
+import noDefaultExport from "eslint-plugin-import"
+import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions"
 
 export default defineConfig([
     globalIgnores(["dist"]),
@@ -18,6 +20,8 @@ export default defineConfig([
         ],
         plugins: {
             "no-relative-import-paths": noRelativeImportPaths,
+            "prefer-arrow-functions": preferArrowFunctions,
+            import: noDefaultExport,
         },
         languageOptions: {
             ecmaVersion: 2020,
@@ -32,6 +36,17 @@ export default defineConfig([
                 "error",
                 { allowSameFolder: true },
             ],
+            "prefer-arrow-functions/prefer-arrow-functions": "error",
+            "import/no-default-export": "error",
         },
+    },
+    {
+        files: ["*.config.js", "*.config.ts"],
+        rules: {
+            "import/no-default-export": "off",
+        },
+    },
+    {
+        ignores: ["src/components/ui/**"],
     },
 ])
