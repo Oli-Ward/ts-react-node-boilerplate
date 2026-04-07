@@ -1,6 +1,4 @@
-import "../App.css"
-
-function App() {
+export const Home = () => {
     return (
         <>
             <section id="top">
@@ -17,5 +15,3 @@ function App() {
         </>
     )
 }
-
-export default App

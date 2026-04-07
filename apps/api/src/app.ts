@@ -10,7 +10,6 @@ export const createApp = (): express.Application => {
     app.use(express.json())
     app.use(cors())
     app.use(morgan("dev"))
-    // register routes first
     app.use("/api/v1", router)
     app.use(notFoundHandler)
     app.use(errorHandler)
