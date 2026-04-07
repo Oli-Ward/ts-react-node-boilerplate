@@ -8,8 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@shared': resolve(__dirname, '../../packages/shared/src'),
-      '@components': resolve(__dirname, 'src/components'),
-      '@assets': resolve(__dirname, 'src/assets'),
+      '@': resolve(__dirname, 'src')
     },
   },
   server: {

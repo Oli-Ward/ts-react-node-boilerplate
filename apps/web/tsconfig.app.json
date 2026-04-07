@@ -3,7 +3,13 @@
     "compilerOptions": {
         "jsx": "react-jsx",
         "moduleResolution": "Bundler",
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
     },
     "exclude": [
         "node_modules",
