@@ -3,7 +3,7 @@ import express from "express"
 import morgan from "morgan"
 
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler"
-import router from "./routes"
+import { router } from "./routes"
 
 export const createApp = (): express.Application => {
     const app: express.Application = express()

@@ -35,6 +35,8 @@
     "@types/supertest": "^7.2.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9.39.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prefer-arrow-functions": "^3.9.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.4.1",
     "globals": "^17.4.0",

@@ -2,7 +2,7 @@ import "dotenv/config"
 import "./config/db"
 
 import { createApp } from "./app"
-import logger from "./config/logger"
+import { logger } from "./config/logger"
 
 const app = createApp()
 

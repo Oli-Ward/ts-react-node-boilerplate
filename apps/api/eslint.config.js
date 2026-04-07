@@ -1,4 +1,6 @@
 import pluginJs from "@eslint/js"
+import noDefaultExport from "eslint-plugin-import"
+import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions"
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 import simpleImportSort from "eslint-plugin-simple-import-sort"
 import unusedImports from "eslint-plugin-unused-imports"
@@ -20,6 +22,8 @@ export default [
         plugins: {
             "simple-import-sort": simpleImportSort,
             "unused-imports": unusedImports,
+            "prefer-arrow-functions": preferArrowFunctions,
+            import: noDefaultExport,
         },
     },
     { ignores: ["node_modules", "dist"] },
@@ -36,6 +40,14 @@ export default [
                 "error",
                 { argsIgnorePattern: "^_" },
             ],
+            "prefer-arrow-functions/prefer-arrow-functions": "error",
+            "import/no-default-export": "error",
+        },
+    },
+    {
+        files: ["*.config.js", "*.config.ts"],
+        rules: {
+            "import/no-default-export": "off",
         },
     },
     pluginJs.configs.recommended,
