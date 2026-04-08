@@ -1,5 +1,6 @@
-import { User, LoginCredentials } from "@/types"
 import { createContext, useContext } from "react"
+
+import { LoginCredentials, User } from "@/types"
 
 interface AuthContext {
     user: User | null

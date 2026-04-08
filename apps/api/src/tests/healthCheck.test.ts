@@ -1,6 +1,5 @@
+import { createApp } from "src/app"
 import request from "supertest"
-
-import { createApp } from "../app"
 
 describe("API", () => {
     describe("Health Check", () => {

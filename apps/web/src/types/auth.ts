@@ -1,15 +1,14 @@
 export type User = {
-    id: number;
-    email: string;
-};
+    id: number
+    email: string
+}
 
 export type LoginCredentials = {
-    email: string,
+    email: string
     password: string
 }
 
 export type AuthResponse = {
-    user: User,
+    user: User
     token: string
 }
-

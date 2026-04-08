@@ -1,7 +1,9 @@
-import { Request, Response, Router } from "express"
+import { Router } from "express"
+
+import { authRouter } from "./auth"
+import { healthRouter } from "./health"
 
 export const router: Router = Router()
 
-router.get("/health", (_req: Request, res: Response) => {
-    res.json({ message: "Hello World" })
-})
+router.use("/auth", authRouter)
+router.use("/health", healthRouter)

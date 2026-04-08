@@ -4,7 +4,7 @@ export const setItem = (key: string, value: unknown) => {
     } catch (error) {
         console.error("Error saving to localStorage", error)
     }
-};
+}
 
 export const getItem = <T>(key: string): T | undefined => {
     try {
@@ -13,4 +13,4 @@ export const getItem = <T>(key: string): T | undefined => {
     } catch (error) {
         console.error("Error reading from localStorage", error)
     }
-};
+}

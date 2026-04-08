@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
-import { setItem, getItem } from '@/utils/localStorage';
+import { useEffect, useState } from "react"
+
+import { getItem, setItem } from "@/utils/localStorage"
 
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
     const [state, setState] = useState<T>(() => {
-        return getItem(key) ?? initialValue;
-    });
+        return getItem(key) ?? initialValue
+    })
 
     useEffect(() => {
-        setItem(key, state);
-    }, [key, state]);
+        setItem(key, state)
+    }, [key, state])
 
-    return [state, setState] as const;
+    return [state, setState] as const
 }

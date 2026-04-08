@@ -1,9 +1,10 @@
 import { useMemo } from "react"
-import { useNavigate, Outlet } from "react-router"
+import { Outlet, useNavigate } from "react-router"
+
 import { AuthContext } from "@/hooks/useAuth"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
-import { LoginCredentials, User } from "@/types"
 import { loginUser } from "@/services/auth"
+import { LoginCredentials, User } from "@/types"
 
 export const AuthProvider = () => {
     const [user, setUser] = useLocalStorage<User | null>("user", null)
