@@ -1,7 +1,7 @@
 import Database from "better-sqlite3"
 import { drizzle } from "drizzle-orm/better-sqlite3"
+import { logger } from "src/config/logger"
 
-import { logger } from "../logger"
 import * as schema from "./schema"
 
 const sqlite: Database.Database = new Database("db.sqlite")
