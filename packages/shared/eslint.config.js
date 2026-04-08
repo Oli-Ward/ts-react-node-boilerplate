@@ -1,48 +1,29 @@
+import pluginJs from "@eslint/js"
 import { defineConfig, globalIgnores } from "eslint/config"
-import js from "@eslint/js"
-import noRelativeImportPaths from "eslint-plugin-no-relative-import-paths"
-import noDefaultExport from "eslint-plugin-import"
-import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions"
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
-import reactHooks from "eslint-plugin-react-hooks"
-import reactRefresh from "eslint-plugin-react-refresh"
 import simpleImportSort from "eslint-plugin-simple-import-sort"
 import unusedImports from "eslint-plugin-unused-imports"
-import globals from "globals"
 import tseslint from "typescript-eslint"
 
 export default defineConfig([
-    globalIgnores(["dist", "src/components/ui/**"]),
+    globalIgnores(["dist"]),
     {
-        files: ["**/*.{ts,tsx}"],
+        files: ["**/*.{js,ts}"],
         extends: [
-            js.configs.recommended,
+            pluginJs.configs.recommended,
             ...tseslint.configs.recommended,
-            reactHooks.configs.flat.recommended,
-            reactRefresh.configs.vite,
             eslintPluginPrettierRecommended,
         ],
         plugins: {
-            "no-relative-import-paths": noRelativeImportPaths,
-            "prefer-arrow-functions": preferArrowFunctions,
             "simple-import-sort": simpleImportSort,
             "unused-imports": unusedImports,
-            import: noDefaultExport,
         },
         languageOptions: {
-            ecmaVersion: 2020,
-            globals: globals.browser,
             parserOptions: {
                 tsconfigRootDir: import.meta.dirname,
             },
         },
         rules: {
-            "no-relative-import-paths/no-relative-import-paths": [
-                "error",
-                { allowSameFolder: true },
-            ],
-            "prefer-arrow-functions/prefer-arrow-functions": "error",
-            "import/no-default-export": "error",
             "prefer-const": "error",
             "@typescript-eslint/no-explicit-any": "error",
             "@typescript-eslint/no-unused-vars": [
@@ -55,12 +36,6 @@ export default defineConfig([
             "unused-imports/no-unused-imports": "error",
             "simple-import-sort/imports": "error",
             "simple-import-sort/exports": "error",
-        },
-    },
-    {
-        files: ["*.config.js", "*.config.ts"],
-        rules: {
-            "import/no-default-export": "off",
         },
     },
 ])

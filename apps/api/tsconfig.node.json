@@ -2,10 +2,11 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "src"
+        "rootDir": "src",
+        "baseUrl": ".",
+        "paths": {
+            "@app/shared": ["../../packages/shared/src"]
+        }
     },
-    "include": [
-        "src",
-        "eslint.config.js"
-    ]
+    "include": ["src", "eslint.config.js"]
 }
